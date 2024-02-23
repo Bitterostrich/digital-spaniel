@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+
+  --border-radius: 12px;
+  --main-header: 48px;
+  --header-font: "Raleway", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --font-mono: "Raleway Mono", "Open Sans Mono";
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 1080px;
+  margin:auto;
+}
+
+p, span, a, li, ul {
+  font-family:var(--body-font)
+}
+
+
