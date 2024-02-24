@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from './hero.module.scss';
+import globalstyles from '@/app/globals.module.scss'
 import Image from 'next/image'
 import SpanielHero from '../../public/images/Spaniel01_gradient.png'
 
@@ -27,7 +28,7 @@ const Hero = () => {
         },
 
         {
-            content: "Lets talk",
+            content: "Let's talk",
             className:`${styles.link}`
         }
 
@@ -36,8 +37,8 @@ const Hero = () => {
     return (
         <>
         <section className={styles.hero}>
-     
-            <div className={styles.contentContainer}>
+        <div className={globalstyles.container}>
+        <div className={styles.contentContainer}>
                 {heroContent.map((item,index) => (
                     <p key={index} className={item.className}>{item.content}</p>
                 ))}
@@ -49,10 +50,9 @@ const Hero = () => {
                 src={SpanielHero}
                 width={1900}
                 height={1900}
-           
                 />
             </div>
-
+        </div>
 
         </section>
         </>

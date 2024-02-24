@@ -21,8 +21,13 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4 {
+  font-family: var(--header-font)
+}
+
 p, span, a, li, ul {
   font-family:var(--body-font)
 }
+
 
 
