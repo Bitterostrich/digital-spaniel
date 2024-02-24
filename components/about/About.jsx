@@ -1,3 +1,6 @@
+'use client'
+
+import React, {useState} from 'react'
 import styles from './about.module.scss'
 import globalstyles from '@/app/globals.module.scss'
 import herostyles from '../hero/hero.module.scss'
@@ -6,6 +9,8 @@ import herostyles from '../hero/hero.module.scss'
 
 
 const About = () => {
+
+    const [showButton, setShowButton] = useState(false)
     
     const leftItems = [
         {
@@ -73,7 +78,9 @@ const About = () => {
                     <div key={index} className={styles.gridItems}>
                         <h3 className={styles.listTitle}>{category.category}</h3>
                         {category.items.map((item, itemIndex) => (
-                            <p key={itemIndex} className={styles.listItem}>{item.content}</p>
+                            <p onMouseEnter={() =>{setShowButton(!showButton)}} key={itemIndex} className={`${styles.listItem} ${showButton ? styles.activeButton : "" }`}>{item.content}
+                           
+                            </p>
                         ))}
                     </div>
                 ))}
