@@ -19,8 +19,6 @@
 html,
 body {
   overflow-x: hidden;
-  max-width: 1080px;
-  margin:auto;
 }
 
 p, span, a, li, ul {

@@ -2,7 +2,7 @@
 
 
 import { Open_Sans, Raleway } from "next/font/google";
-
+import NavBar from '@/components/navbar/NavBar';
 import '../app/globals.css'
 
 
@@ -16,7 +16,8 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <>
-        <Component {...pageProps} />
+     <NavBar/>
+        <Component {...pageProps}></Component>
 
     </>
 

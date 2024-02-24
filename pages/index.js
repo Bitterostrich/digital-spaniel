@@ -1,11 +1,11 @@
 import '../app/globals.css';
-import NavBar from '@/components/navbar/NavBar';
+import Hero from '@/components/hero/Hero'
 
 
 export default function Home () {
     return (
         <div>
-            <NavBar/>
+           <Hero/>
         </div>
     )
 }

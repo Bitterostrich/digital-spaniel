@@ -1,9 +1,16 @@
-.navbar {
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    justify-content: space-between;
+$white: #ffffff;
 
+.navbar {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    justify-content: space-between;
+    width:100%;
+    z-index:10;
+    max-width: 1620px;
+    margin:auto;
+    padding:20px 20px 0px 20px
 }
 
 .navbarLinks {
@@ -11,12 +18,14 @@
     flex-direction:column;
     text-decoration:none;
     gap: 30px;
+    
     align-items:center;
     border:1px solid black
 }
+
 .navbarLinks a {
     text-decoration:none;
-    color:black;
+    color:$white;
 }
 
 .mobileLinks {
@@ -33,7 +42,8 @@
 .button {
     position:absolute;
     right:0;
-    margin:20px;
+    top:0;
+    margin:32px;
     width:60px;
     height: 60px;
     background-color: #458CE9;
@@ -89,7 +99,9 @@
         display:flex;
         flex-direction:row;
         border:none;
+        width:40%;
         font-size:18px;
+        justify-content:space-evenly;
      
     }
 
