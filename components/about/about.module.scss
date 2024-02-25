@@ -7,7 +7,7 @@ $black: #19293A;
     display: flex;
     flex-direction:column;
     margin: auto;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
 }
 
@@ -17,6 +17,7 @@ $black: #19293A;
     flex-direction: column;
     justify-content:center;
     padding-right: 8%;
+    margin-bottom:30px;
 }
 
 .title,.titleTwo {
@@ -46,16 +47,19 @@ $black: #19293A;
     flex-direction: column;
     height: auto;
     width: 100%;
-    margin: 60px 0;
+    margin: 15px 0;
     
    
    
     h3{
         color:$black;
+        text-transform:uppercase;
+        font-weight: 600;
     }
 
     h3, p {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
+        font-size:17px;
         
 
     }
@@ -63,6 +67,7 @@ $black: #19293A;
     p {
         position: relative;
         cursor: pointer;
+        font-size:16px;
         color: $grey;
         font-weight:600;
         
@@ -73,19 +78,22 @@ $black: #19293A;
         &::after {
             content:">";
             position: relative;
+            right:0;
+            top: 40%;
             border-radius:9999px;
             background-color: $grey;
-            transform: translateY(-50%) ;
-            right:0;
-            padding:5px;
-            width: 15px;
-            height: 15px;
-            top: 50%;
+            transform: translateY(-50%);
             display:inline-block;
+            
+            padding:5px;
+            width: 10px;
+            height: 10px;
+           
+            
             margin-left:10px;
             text-align: center;
-            font-size: 12px;
-            line-height:15px;
+            font-size: 10px;
+            line-height:10px;
             color: white;
             opacity:0;
          
@@ -108,7 +116,78 @@ $black: #19293A;
 
 @media (min-width: 786px) {
     .about {
-        display: flex;
+        flex-direction:row;
         
+    }
+
+    .gridItems {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        margin: 60px 0;
+        
+       
+       
+        h3{
+            color:$black;
+            text-transform:uppercase;
+            font-weight: 600;
+        }
+    
+        h3, p {
+            margin-bottom: 20px;
+            font-size:20px;
+            
+    
+        }
+    
+        p {
+            position: relative;
+            cursor: pointer;
+            font-size:18px;
+            color: $grey;
+            font-weight:600;
+            
+            transition: opacity 0.3s ease, transform 0.3s ease;
+           
+           
+    
+            &::after {
+                content:">";
+                position: relative;
+                right:0;
+                top: 50%;
+                border-radius:9999px;
+                background-color: $grey;
+                transform: translateY(-50%);
+                display:inline-block;
+                
+           
+                width: 15px;
+                height: 15px;
+               
+                
+                margin-left:15px;
+            
+                font-size: 15px;
+                line-height:15px;
+         
+             
+             
+          
+            }
+            &:hover{
+                transform: translateX(10px)
+            }
+    
+          &:hover::after {
+                opacity: 1;
+                display:inline-block;
+               
+               
+            }
+        }
+    
     }
 }
