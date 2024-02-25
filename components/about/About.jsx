@@ -78,7 +78,8 @@ const About = () => {
                     <div key={index} className={styles.gridItems}>
                         <h3 className={styles.listTitle}>{category.category}</h3>
                         {category.items.map((item, itemIndex) => (
-                            <p onMouseEnter={() =>{setShowButton(!showButton)}} key={itemIndex} className={`${styles.listItem} ${showButton ? styles.activeButton : "" }`}>{item.content}
+                            <p onMouseEnter={() =>{setShowButton(!showButton)}} key={itemIndex} className={`${styles.listItem} ${showButton ? styles.activeButton : "" }`}>
+                                {item.content}
                            
                             </p>
                         ))}

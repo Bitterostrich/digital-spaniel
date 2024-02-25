@@ -14,6 +14,8 @@ $black: #19293A;
   }
 
 .singleContainer {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 1980px;
     padding: 5% 5%;
@@ -23,7 +25,10 @@ $black: #19293A;
 }
 
 
-@media (min-width: 786px) {
+
+
+@media (min-width: 768px) {
+
     .container {
         flex-direction:row;
         padding: 5% 10%;

@@ -1,4 +1,79 @@
+.recentprojects {
+    display:flex;
+    min-height:100vh;
+    margin:auto;
+    flex-direction:column;
+    position:relative;
 
+}
+.gridnav {
+    display:flex;
+    justify-content:space-around;
+    margin-top:10px;
+    width: 50%;
+    position: relative;
+    
+    span {
+        text-align: center;
+        position:relative;
+        width: 100%;
+        &::after {
+            content:"";
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            bottom:-10px;
+            background-color: black;
+            transition: opacity
+            
+        }
+    
+        &:hover::after{
+            background-color:red,
+           
+        }
+    }
+}
+
+.gridWrapper {
+    display: flex;
+    flex-direction:column;
+    width:100%;
+    position:relative;
+
+
+    .grid {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        width: 100%;
+        margin-top:40px;
+
+        &:nth-child(4) {
+            grid-column: span 2;
+        }
+    
+        .gridItem {
+            position: relative;
+        }
+    
+        .gridText {
+            position: absolute;
+            top: 0;
+        }
+
+    }
+
+
+}
+
+
+
+
+@media (min-width: 786px) {
+    
 .gridnav {
     display:flex;
     justify-content:space-around;
@@ -28,6 +103,5 @@
            
         }
     }
-
- 
+}
 }
