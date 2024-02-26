@@ -24,6 +24,17 @@ $black: #19293A;
     position: relative;
 }
 
+.wideContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1980px;
+    padding: 5% 5%;
+    margin: 0 auto;
+    box-sizing:border-box;
+    position: relative;
+}
+
 
 .title,.titleTwo {
     font-family: var(--header-font);
@@ -47,5 +58,11 @@ $black: #19293A;
     }
     .singleContainer {
         padding: 5% 10%;
+    }
+
+    .wideContainer {
+
+        padding: 0px;
+;
     }
 }

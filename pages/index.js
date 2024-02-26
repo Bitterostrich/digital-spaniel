@@ -1,7 +1,9 @@
 import '../app/globals.css';
-import Hero from '@/components/hero/Hero'
-import About from '@/components/about/About'
-import RecentProjects from '@/components/recentprojects/RecentProjects'
+import Hero from '@/components/hero/Hero';
+import About from '@/components/about/About';
+import RecentProjects from '@/components/recentprojects/RecentProjects';
+import CaseStudies from '@/components/casestudies/CaseStudies';
+
 
 
 export default function Home () {
@@ -10,6 +12,7 @@ export default function Home () {
            <Hero/>
            <About/>
            <RecentProjects/>
+           <CaseStudies/>
         </div>
     )
 }
