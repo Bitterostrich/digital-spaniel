@@ -25,6 +25,18 @@ $black: #19293A;
 }
 
 
+.title,.titleTwo {
+    font-family: var(--header-font);
+    font-weight:500;
+    font-size: 48px;
+    letter-spacing:0px;
+}
+
+.titleTwo {
+    color:$grey;
+    margin-bottom:30px;
+}
+
 
 
 @media (min-width: 768px) {

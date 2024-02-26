@@ -1,5 +1,8 @@
 import styles from './projects.module.scss';
+import React, {useState} from 'react'
 import globalstyles from '@/app/globals.module.scss';
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+
 import {whellies,
     newspaper,
     makerek,
@@ -10,6 +13,7 @@ import Image from 'next/image';
 import Link from 'next/link'
 
 const RecentProjects = () => {
+    const [currentNav, setCurrentNav] = useState("All"); 
 
 
 
@@ -26,62 +30,169 @@ const RecentProjects = () => {
     ]
 
     const gridNav = [
-        {
-            content:"All"
-        },
-        {
-            content:"Branding"
-        },
-        {
-            content:"Web Design"
-        },
-        {
-            content:"Digital Marketing"
-        }
+        "All", "Branding", "Web Design", "Digital Marketing"
     ]
 
     const gridContent = [
         {
-            image:whellies,
-            items: [
-                {title: "Make Ideas happen", 
-                description:"A local paper with big ideas needed",
-                link: "Full project"}
+            category: "All",
+            items: [ 
+                {
+                image:whellies,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:newspaper,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:makerek,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:dinamonews,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+
+                {
+                image:rider,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
             ]
         },
+
         {
-            image:newspaper,
-            items: [
-                {title: "Make Ideas happen", 
-                description:"A local paper with big ideas needed",
-                link: "Full project"}
+            category: "Branding",
+            items: [ 
+
+                {
+                image:newspaper,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:makerek,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:dinamonews,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+
             ]
         },
+
         {
-            image:makerek,
-            items: [
-                {title: "Make Ideas happen", 
-                description:"A local paper with big ideas needed",
-                link: "Full project"}
+            category: "Web Design",
+            items: [ 
+
+                {
+                image:newspaper,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:makerek,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:dinamonews,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+
+                {
+                image:rider,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
             ]
         },
+
         {
-            image:dinamonews,
-            items: [
-                {title: "Make Ideas happen", 
-                description:"A local paper with big ideas needed",
-                link: "Full project"}
+            category: "Digital Marketing",
+            items: [ 
+                {
+                image:whellies,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:newspaper,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:makerek,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+                {
+                image:dinamonews,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
+
+                {
+                image:rider,
+                title: "Make Ideas happen", 
+                description:"A local paper with big ideas needed A sharp new brand to inspire readers.",
+                link: "Full project"
+                },
             ]
         },
-        {
-            image:rider,
-            items: [
-                {title: "Make Ideas happen", 
-                description:"A local paper with big ideas needed",
-                link: "Full project"}
-            ]
-        },
+
     ]
+
+    const handleNavChange = (direction) => {
+        const currentIndex = gridNav.indexOf(currentNav);
+        let newIndex = currentIndex
+        
+        if (direction === "next" && currentIndex < gridNav.length - 1) {
+            newIndex = currentIndex + 1
+        } else if (direction === "prev" && currentIndex > 0) {
+            newIndex = currentIndex - 1
+        }
+
+        const newCategory = gridNav[newIndex]
+        setCurrentNav(newCategory)
+    }
+
+    const filteredContent = currentNav === "All" ? gridContent : gridContent.filter(item => item.category === currentNav)
+
+    const gridFooter = [
+        {
+            content:"See all work"
+        }
+    ]
+
+
+    const category = gridContent.map(({category}) => category)
+    console.log(category)
 
     return (
         <>
@@ -91,47 +202,64 @@ const RecentProjects = () => {
             <div>
                 {headerText.map((title, index) => (
                     
-                        <h3 key={index}>{title.title}</h3>
+                        <h3 className={title.className} key={index}>{title.title}</h3>
                 ))}
             </div>
 
 
             <div className={styles.gridWrapper}>
                 <div className={styles.gridnav}>
-                    {gridNav.map((content, index) => (
-                        <span  key={index}>{content.content}</span>
+                    {gridContent.map(({category}, index) => (
+                        <span  key={index} 
+                        onClick={() => setCurrentNav(category)} 
+                        
+                        className={`${styles.nav} ${currentNav === category ? styles.activeNav : ""}`}>{category}</span>
                     ))}
                 </div>
+
+
+
+                <div className={styles.gridfooter}>  
+                {gridFooter.map((item, index) => (
+                    <p key={index} onClick={() => setCurrentNav("All")} className={styles.footerText}>{item.content}</p>
+                ))}
+                <div className={styles.footerButtons}>
+                    <div onClick={() => handleNavChange('prev')} className={`${styles.buttonWrap} ${currentNav === category ? styles.activeNav : ""}`}>
+                    <MdArrowForwardIos className={styles.buttonLeft}/>
+                    </div>
+                    
+                    <div onClick={() => handleNavChange('next')} className={styles.buttonWrap}>
+                    <MdArrowForwardIos className={styles.buttonRight}/>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+
                 <div className={styles.grid}>
-                    {gridContent.map((image, index) => (
+                    {filteredContent.length > 0 && filteredContent[0].items.map((item, index) => (
                         <div className={styles.gridItem} key={index}>
                         <Image
                         className={styles.picture}
-                        
-                        width={420}
-                        height={420}
-                     
+                        layout="responsive"
                         objectFit="cover"
-                       
-                        src={image.image}/>
+                        src={item.image}/>
 
-                        {image.items.map((item, itemIndex) => (
-                            <div className={styles.gridText} key={itemIndex}>
+                   
+                            <div className={styles.gridText}>
                                 <h3>{item.title}</h3>
                                 <p>{item.description}</p>
                                 <Link href="#">{item.link}</Link>
                             </div>
-                        ))}
+            
                         </div>
-
                     ))}
-                    
-          
-
-
+            </div>
             </div>
 
-            </div>
+           
+
 
 
             </div>
