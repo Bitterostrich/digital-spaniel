@@ -1,3 +1,5 @@
+'use client'
+
 import React, {useState} from "react";
 import styles from './missionstatement.module.scss';
 import globalstyles from '@/app/globals.module.scss';
