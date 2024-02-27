@@ -14,7 +14,7 @@ const CaseStudies = () => {
     const headerContent = [
         {
             title: "Case Studies",
-            className:`${globalstyles.title}`,
+            className:`${styles.title}`,
             description: "Every project is different. We like to work collaboratively with our clients, tailoring each project to suit the needs of you and your business."
         }
     ]
@@ -28,7 +28,7 @@ const CaseStudies = () => {
     const handleStudyScroll = (direction) => {
         const container = document.querySelector('.' + styles.studyContainer);
         const containerWidth = container.offsetWidth;
-        const itemWidthPercent = 70;
+        const itemWidthPercent = 100;
         const itemWidth = (containerWidth * itemWidthPercent) / 100 // get width as a percentage
     
 

@@ -26,7 +26,15 @@ $lightgrey: #50647380;
         align-items: center;
         text-align: center;
         width: 100%;
-        margin:auto;
+        margin:25px auto;
+    }
+
+    .title {
+        font-family: var(--header-font);
+        font-weight:500;
+        font-size: 48px;
+        letter-spacing:0px;
+        text-align: center;
     }
 }
 
@@ -60,6 +68,7 @@ $lightgrey: #50647380;
     flex: 1 0 30%;
     display: flex;
     flex-direction:column;
+    position: relative;
     justify-content: center;
 
 
@@ -117,17 +126,27 @@ $lightgrey: #50647380;
         background-color: $black;
         
         .textItems {
-   
+            display: flex;
+              flex-direction:column;
          
             
             h3, p, a {
-                margin: 10%;
+                padding: 4% 6%;
+            }
+            h3 {
+                font-weight:500;
+                font-size: clamp(0.5rem, 5vw, 1.4rem)
+            }
+            p {
+                font-weight: 300;
+                font-size: clamp(0.3rem, 5vw, 1.1rem)
             }
 
             a {
              
                 text-decoration: none;
                 color: white;
+                font-size: clamp(0.4rem, 5vw, 1.2rem)
             }
         }
     }
