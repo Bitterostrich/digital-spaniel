@@ -51,6 +51,7 @@ const Testimonials = () => {
                             <Image
                             height={100}
                             width={100}
+                            alt={`image for ${testimonial.name}`}
                             objectFit="cover"
                             src={testimonial.picture} />
                             <p className={styles.fontbold}>{testimonial.name}</p>

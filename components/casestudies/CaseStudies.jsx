@@ -70,7 +70,7 @@ const CaseStudies = () => {
                         <div id={`item-${study.id}`} key={`${index}-${study.id}`} className={styles.studyItem}>
                             <div className={styles.imageWrap}>
                             <Image
-                            
+                            alt={`image for ${study.title}`}
                             src={study.image}
                             objectFit="cover"
                             layout="responsive"/>

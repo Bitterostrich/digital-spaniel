@@ -43,6 +43,7 @@ const MissionStatement = () => {
                    <div className={styles.itemsLeft}>
                     <Image
                     src={officedesk}
+                    alt="image for office desk"
                     layout="responsive"
                     objectFit="cover"/>
 
@@ -56,6 +57,7 @@ const MissionStatement = () => {
                     <div className={styles.items}>
                         <div className={styles.imageContainers}>
                         <Image
+                            alt="image for office people"
                             src={officepeople}
                             layout="responsive"
                             objectFit="cover"/>
@@ -64,6 +66,7 @@ const MissionStatement = () => {
                         <div className={styles.imagetrial}>
                         <Image
                             src={officesign}
+                            alt="image for office wall sign"
                             layout="responsive"
                             objectFit="cover"/>
                         </div>
@@ -71,6 +74,7 @@ const MissionStatement = () => {
                         </div>
                         <div className={styles.imageContainers}>
                         <Image
+                            alt="image for office hallway"
                             src={officeway}
                             layout="responsive"
                             objectFit="cover"/>

@@ -243,6 +243,7 @@ const RecentProjects = () => {
                     {filteredContent.length > 0 && filteredContent[0].items.map((item, index) => (
                         <div className={styles.gridItem} key={index}>
                         <Image
+                        alt={`image for ${item.title}`}
                         className={styles.picture}
                         layout="responsive"
                         objectFit="cover"

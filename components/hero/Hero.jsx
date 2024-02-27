@@ -46,6 +46,7 @@ const Hero = () => {
 
             <div className={styles.imageContainer}>
                 <Image
+                alt="image for spaniel"
                 className={styles.picture}
                 src={SpanielHero}
                 width={1900}
