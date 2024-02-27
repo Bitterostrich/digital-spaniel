@@ -1,0 +1,124 @@
+$white: #ffffff;
+
+.navbar {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    justify-content: space-between;
+    width:100%;
+    z-index:10;
+    max-width: 1620px;
+    margin:auto;
+    padding:20px 20px 0px 20px
+}
+
+.navbarLinks {
+    display: none;
+    flex-direction:column;
+    text-decoration:none;
+    gap: 30px;
+    
+    align-items:center;
+    border:1px solid black
+}
+
+.navbarLinks a {
+    text-decoration:none;
+    color:$white;
+}
+
+.mobileLinks {
+    display:flex;
+
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.active {
+    display:flex;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+}
+
+.button {
+    position:absolute;
+    right:0;
+    top:0;
+    margin:32px;
+    width:60px;
+    height: 60px;
+    background-color: #458CE9;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    .burger{
+        width:100%;
+        &::before, &::after{
+            content:"";
+            display:block;
+            width:40%;
+            background-color: white;
+            height:1px;
+            margin: auto;
+            position:relative;
+            transition: all 0.3s;
+        }
+
+        &::before {
+            top: 5px;
+            
+        }
+        &::after {
+            top:-5px;
+            
+        }
+    }
+    .burgerActive {
+  
+        &::before{
+            top: 1px;
+            transform:rotate(45deg);
+        }
+        &::after {
+            top:-0.8px;
+            transform:rotate(-45deg);
+        }
+    }
+
+}
+
+.hideNavbar {
+    transform: translateY(-100%); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.showNavbar {
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (min-width:786px) {
+    .navbar {
+       display:flex;
+       flex-direction:row;
+    }
+    .button {
+        display:none;
+    }
+    .navbarLinks {
+        display:flex;
+        flex-direction:row;
+        border:none;
+        width:40%;
+        font-size:18px;
+        justify-content:space-evenly;
+     
+    }
+
+    
+
+}

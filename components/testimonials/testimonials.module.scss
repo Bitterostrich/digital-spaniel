@@ -1,0 +1,135 @@
+$grey: #E2E4E6;
+$darkergrey: #C5CACE;
+$darkblue: #19293A;
+
+.testimonials {
+    min-height: 100vh;
+    margin: 0 auto;
+    display: block;
+}
+
+.testContainer {
+    display: flex;
+    width: 100%;
+    flex: 1 0 auto;
+   
+    
+
+    .testItems {
+        
+        display: flex;
+        align-items: center;
+        flex-direction:column;
+        background-color: $grey;
+        transition: all 0.4s ease;
+        height: 100%;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: $darkblue;
+            color: white;
+            transform: scale(1.03);
+        }
+
+
+    }
+}
+
+.testimonyContainer {
+    max-width: 1980px;
+    margin: 0 auto;
+    display: flex;
+    padding: 2% 5%;
+    gap: 2.5%;
+    flex: 1 0 auto;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+
+
+.testimonyTop, .testimonyBottom {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+    padding: 5% 5%;
+    width: 100%;
+    flex: 1 0 auto;
+    
+}
+
+.fontbold {
+    font-weight: 600;
+}
+
+
+.testimonyBottom {
+    text-align: center;
+
+    p {
+        margin: 2%;
+    }
+}
+
+.testimonyTop {
+
+
+    
+    p {
+        position: relative;
+        text-align: center;
+        font-style: italic;
+     
+        font-size: clamp(0.5rem, 5vw, 1.2rem);
+
+        &::before {
+            content: "“";
+            position: absolute;
+            top:-5px;
+            left: -10px;
+        
+            font-size: clamp(0.8rem, 5vw, 5rem);
+            color: $darkergrey;
+        }
+
+        &::after {
+            content: "”";
+            position: absolute;
+            
+            font-size: clamp(0.8rem, 5vw, 5rem);
+            right: 20px;
+            color: $darkergrey;
+        
+        }
+    }
+}
+
+.buttonContainer {
+    max-width: 1980px;
+    margin: 0 auto;
+    display: flex;
+    
+    button {
+        font-size: 40px
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .testimonyContainer {
+        padding: 2% 6%;
+    
+    }
+
+    .testContainer {
+        flex: 1 1 auto;
+
+        .testimonyTop, .testimonyBottom {
+            padding: 10% 5%;
+            margin: 5%;
+        }
+    }
+}
