@@ -31,12 +31,38 @@ const Testimonials = () => {
         <section className={styles.testimonials}>
             <div className={globalstyles.singleContainer}>
              
-                    {header.map((title, index) => {
+                    {header.map((title, index) => (
                            <div key={index} className={styles.header}>
                             <h3 className={title.className}>{title.content}</h3>
                             </div>
-                    })}
-                
+                    ))}
+            </div>
+
+            <div className={styles.testimonyContainer}>
+                    {testimonials.map((testimonial, index) => (
+                        <div id={`${testimonial.id}`} key={`${index} - ${testimonial.id}`} className={styles.testContainer}>
+                            <div className={styles.testItems}>
+                            
+                            <div className={styles.testimonyTop}>
+                            <p>{testimonial.testimony}</p>
+                            </div>
+                            <div className={styles.testimonyBottom}>
+
+                            <Image
+                            height={100}
+                            width={100}
+                            objectFit="cover"
+                            src={testimonial.picture} />
+                            <p className={styles.fontbold}>{testimonial.name}</p>
+                            
+                            <p >{testimonial.position}, {testimonial.company}</p>
+                            </div>
+
+                            </div>
+
+                        </div>
+                    ))}
+                    
             </div>
 
         </section>
