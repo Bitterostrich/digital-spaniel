@@ -18,11 +18,12 @@ const NavBar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+
             const currentScrollY = window.scrollY;
 
-            if (currentScrollY < lastScrollY) {
+            if (currentScrollY === 0) {
                 setShowNavbar(true)
-            } else if (currentScrollY > lastScrollY) {
+            } else  {
                 setShowNavbar(false)
             }
 
