@@ -3,7 +3,9 @@
 
 import { Open_Sans, Raleway } from "next/font/google";
 import NavBar from '@/components/navbar/NavBar';
-import '../app/globals.css'
+import '../app/globals.css';
+
+import {TestimonialProvider} from '../contexts/TestimonialContext'
 
 
 const openSans = Open_Sans({subsets: ["latin"]})
@@ -16,8 +18,12 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <>
-     <NavBar/>
-        <Component {...pageProps}></Component>
+    <TestimonialProvider>
+       <NavBar/>
+          <Component {...pageProps}></Component>
+
+    </TestimonialProvider>
+
 
     </>
 

@@ -30,6 +30,9 @@ $white: #ffffff;
 
 .mobileLinks {
     display:flex;
+
+    transition: transform 0.3s ease-in-out;
+    
 }
 
 .active {
@@ -75,6 +78,7 @@ $white: #ffffff;
         }
     }
     .burgerActive {
+  
         &::before{
             top: 1px;
             transform:rotate(45deg);
@@ -85,6 +89,16 @@ $white: #ffffff;
         }
     }
 
+}
+
+.hideNavbar {
+    transform: translateY(-100%); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.showNavbar {
+    
+    transition: transform 0.3s ease-in-out;
 }
 
 @media (min-width:786px) {
@@ -104,5 +118,7 @@ $white: #ffffff;
         justify-content:space-evenly;
      
     }
+
+    
 
 }

@@ -1,0 +1,75 @@
+
+$brightgrey: #EDEFF1;
+$red: #C0345E;
+
+.missionstatement {
+    min-height: 100vh;
+    margin: auto;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1980px;
+    padding: 5% 5%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.background {
+    max-width: 1980px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: $brightgrey;
+
+}
+
+.itemsLeft, .items {
+    display: flex;
+    flex: 1 0 auto;
+    position:relative;
+    align-items: stretch;
+
+}
+
+.itemsLeft {
+    display: flex;
+    flex-direction:column;
+
+    .itemsText {
+        display: flex;
+        gap: 10%;
+        margin-left:2%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-decoration: underline;
+        text-underline-offset: 8px;
+        text-decoration-thickness: 3px;
+        text-decoration-color: $red;
+        font-weight: 600;
+    }
+}
+
+.imageContainers {
+
+    flex: 1 1 100%;
+    width: 100%;
+
+
+}
+
+.imagetrial {
+    display:flex;
+    justify-content: flex-end;
+   
+
+}
+
+@media (min-width: 768px) {
+    .headerContainer {
+        padding: 2% 10%;
+    }
+}

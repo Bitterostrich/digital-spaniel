@@ -10,9 +10,32 @@ import SpaneilLogo from '../../public/images/digital-logo.png'
 
 const NavBar = () => {
     const [isActive, setIsActive] = useState(false)
+    const [showNavbar, setShowNavbar] = useState(true); 
+    const [lastScrollY, setLastScrollY] = useState(0);
     
 
     const router = useRouter()
+
+    useEffect(() => {
+        const handleScroll = () => {
+
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY === 0) {
+                setShowNavbar(true)
+            } else  {
+                setShowNavbar(false)
+            }
+
+            setLastScrollY(currentScrollY)
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [lastScrollY])
 
 
     const navItems = {
@@ -36,7 +59,7 @@ const NavBar = () => {
 
     return (
         <>
-        <div className={styles.navbar}>
+        <div className={`${styles.navbar} ${showNavbar ? styles.showNavbar : styles.hideNavbar}`}>
             <div>
                 <Image
                 src={SpaneilLogo}
